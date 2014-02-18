@@ -17,7 +17,7 @@ public class Instructions extends MouseButton {
 			g.setColor(Color.gray);
 			g.fillRect( (int)x1 + 1, (int)y1 + 1, (int)w - 2, (int)h - 2);
 			g.setColor(Color.BLACK);
-			g.drawString( "Welcome" , (int)x1 + 5, (int)y1 + 13);
+			g.drawString( "Ben Sucks" , (int)x1 + 5, (int)y1 + 13);
 			g.drawString( "Controls:", (int)x1 + 5, (int)y1 + 28);
 			g.drawString( "W = up.", (int)x1 + 6, (int)y1 + 43);
 			g.drawString( "A = left.", (int)x1 + 6, (int)y1 + 58);
