@@ -4,3 +4,8 @@
 *.jar
 *.war
 *.ear
+
+# Utility Files #
+*~
+Thumbs.db
+.DS_Store
