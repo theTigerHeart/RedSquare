@@ -3,8 +3,6 @@ package objects;
 import java.awt.Color;
 import java.awt.Graphics;
 
-import java.lang.Math;
-
 public class Player {
 	private int x;
 	private int y;
@@ -26,15 +24,20 @@ public class Player {
 		return Color.RED;//This will changed to produce blueshift once I work out the relativity.
 	}
 
-	public void draw(Graphics g){
+	public void progess(double dt) {
+		x += (int)(vx * dt + 0.5);
+		y += (int)(vy * dt + 0.5);
+	}
+
+	public void accelerate(double ax, double ay) {
+		vx += ax;
+		vy += ay;
+	}
+
+	public void draw(Graphics g) {
 		g.setColor(Color.black);
 		g.fillRect(x, y, width, height);
 		g.setColor(getColor());
 		g.fillRect(x + 1, y + 1, width - 2, height - 2);
-	}
-
-	public void progess(double dt) {
-		x += (int)(vx * dt + 0.5);
-		y += (int)(vy * dt + 0.5);
 	}
 }
