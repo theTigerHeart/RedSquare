@@ -77,6 +77,7 @@ public class RedSquare extends JComponent implements KeyListener, MouseListener,
 	static final int MIN_SLEEP_TIME = 10;              
 	static final int MAX_FPS = 20;
 	static final int MAX_MS_PER_FRAME = 1000 / MAX_FPS;
+	static final int DT = 1;
 	float fps = 0;
 	
 	static ArrayList<Object> mainList = new ArrayList<Object>();              //Array list for all pieces of levels
@@ -104,15 +105,9 @@ public class RedSquare extends JComponent implements KeyListener, MouseListener,
 		r.run();
 		SoundEffect.init();
 		SoundEffect.volume = SoundEffect.Volume.LOW;
-		/*Sound Effects Note:
-		 * While running through Eclipse, the .wav files cannot be accessed.
-		 * Each sound effect's file must be in the same folder as the exported
-		 * jar. While testing in edit, comment out sound commands
-		 */
 	}
 	public void run() {
 		//Stuff here happens once upon creation of window.
-		//SoundEffect.HIT.play();
 		GameFunctions g = new GameFunctions();
 		mainList.add(new squares.Square( (windowX - 10), (windowY - 10), 20, 20, 3, 3));   //Set field
 		mainList.get(0).red = 255;
@@ -126,14 +121,13 @@ public class RedSquare extends JComponent implements KeyListener, MouseListener,
 		 * Step 5: Go to chooseLevel and build from the template the desired blocks
 		 */
 		
-		buttonList.add(new levels.LevelOne( 10, 10, 80, 20));       //Set Menu Display
+		buttonList.add(new levels.LevelOne( 10, 10, 80, 20));
 		buttonList.add(new levels.LevelTwo( 10, 40, 80, 20));
 		buttonList.add(new levels.LevelThree( 10, 70, 80, 20));
 		buttonList.add(new levels.LevelFour( 10, 100, 80, 20));
 		buttonList.add(new levels.LevelFive( 10, 130, 80, 20));
 		buttonList.add(new levels.LevelSix( 10, 160, 80, 20));
 		buttonList.add(new levels.LevelSeven( 10, 190, 80, 20));
-		          												//Set other buttons
 		oFunctions.add(new SurvivalButton( 10, 430, 100, 20)); //0
 		oFunctions.add(new MenuButton( 280, 230, 80, 20));     //1
 		oFunctions.get(1).on = false;
