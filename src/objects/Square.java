@@ -11,14 +11,17 @@ public class Square {
 	private double vx;
 	private double vy;
 	private Color color;
+	private boolean collidable;
 
-	public Square(int x, int, int width, int height, double vx, double vy) {
+	public Square(int x, int y, int width, int height, double vx, double vy, Color color, boolean collidable) {
 		this.x = x;
 		this.y = y;
 		this.width = width;
 		this.height = height;
 		this.vx = vx;
 		this.vy = vy;
+		this.color = color;
+		this.collidable;
 	}
 
 	public Color getColor() {
@@ -29,7 +32,7 @@ public class Square {
 		this.color = color;
 	}
 
-	public void progess(double dt) {
+	public void progress(double dt) {
 		x += (int)(vx * dt + 0.5);
 		y += (int)(vy * dt + 0.5);
 	}
@@ -39,9 +42,15 @@ public class Square {
 		vy += ay;
 	}
 
+	public void onHit() {
+	}
+
+	public boolean collides() {
+		return collidable;
+	}
+
 	public void draw(Graphics g) {
 		g.setColor(getColor());
 		g.fillRect(x, y, width, height);
-		g.setColor(getColor());
 	}
 }

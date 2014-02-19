@@ -11,7 +11,7 @@ public class Player {
 	private double vx;
 	private double vy;
 
-	public Player(int x, int, int width, int height, double vx, double vy) {
+	public Player(int x, int y, int width, int height, double vx, double vy) {
 		this.x = x;
 		this.y = y;
 		this.width = width;
@@ -21,10 +21,10 @@ public class Player {
 	}
 
 	public Color getColor() {
-		return Color.RED;//This will changed to produce blueshift once I work out the relativity.
+		return Color.RED;//This will be changed to produce blueshift once I work out the relativity.
 	}
 
-	public void progess(double dt) {
+	public void progress(double dt) {
 		x += (int)(vx * dt + 0.5);
 		y += (int)(vy * dt + 0.5);
 	}
