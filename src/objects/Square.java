@@ -11,9 +11,8 @@ public class Square {
 	private double vx;
 	private double vy;
 	private Color color;
-	private boolean collidable;
 
-	public Square(int x, int y, int width, int height, double vx, double vy, Color color, boolean collidable) {
+	public Square(int x, int y, int width, int height, double vx, double vy, Color color) {
 		this.x = x;
 		this.y = y;
 		this.width = width;
@@ -21,11 +20,10 @@ public class Square {
 		this.vx = vx;
 		this.vy = vy;
 		this.color = color;
-		this.collidable;
 	}
 
 	public Color getColor() {
-		return color;//This will changed to produce blueshift once I work out the relativity.
+		return color;
 	}
 
 	public void setColor(Color color) {
@@ -42,11 +40,7 @@ public class Square {
 		vy += ay;
 	}
 
-	public void onHit() {
-	}
-
-	public boolean collides() {
-		return collidable;
+	public void onHit(Player p) {
 	}
 
 	public void draw(Graphics g) {
