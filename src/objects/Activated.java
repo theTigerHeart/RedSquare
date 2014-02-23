@@ -64,7 +64,7 @@ public class Activated {
 		vy += ay;
 	}
 
-	public void onHit(Player p) {
+	public void onHit(Player playerContext, RedSquare gameContext) {
 	}
 
 	public void draw(Graphics g) {
